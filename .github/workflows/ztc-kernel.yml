@@ -257,6 +257,9 @@ jobs:
 
           echo "5系:删除dirty字符串"
           sed -i 's/-dirty//' ./common/scripts/setlocalversion
+
+          echo "修复: 将 -Wno-uninitialized-const-pointer 替换为新版Clang兼容的选项"
+          grep -rl 'Wno-uninitialized-const-pointer' ./common/ | xargs -r sed -i 's/-Wno-uninitialized-const-pointer/-Wno-uninitialized-const-reference/g'
           
 
       - name: Build with retry
