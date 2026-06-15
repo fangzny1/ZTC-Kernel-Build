@@ -120,12 +120,12 @@ jobs:
         run: |
           echo "更改为配置目录: $CONFIG..."
           cd "$CONFIG"
-          curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
+          curl -LSs "https://raw.githubusercontent.com/fangzny1/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
 
       - name: 获取 KSU & SUSFS 版本
         run: |
           echo "This is the SukiSU variant"
-          git clone https://github.com/SukiSU-Ultra/SukiSU-Ultra.git KernelSU
+          git clone https://github.com/fangzny1/SukiSU-Ultra.git KernelSU
           VAR=700
           cd KernelSU
 
@@ -317,7 +317,7 @@ jobs:
         continue-on-error: true
         run: |
           echo "SukiSU..."
-          REPO="SukiSU-Ultra/SukiSU-Ultra"
+          REPO="fangzny1/SukiSU-Ultra"
 
           FILENAME="build-manager.yml"
           KSUM="manager"
